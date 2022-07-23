@@ -9,6 +9,7 @@ setup(
     install_requires=[
         'django',
         'djangorestframework',
+        'psycopg2-binary',
     ],
 )
 

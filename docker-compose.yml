@@ -23,6 +23,21 @@ services:
     volumes:
       - cache:/data
 
+  api:
+    build:
+      context: .
+      dockerfile: api.Dockerfile
+    command: python3 manage.py runserver 0.0.0.0:8000
+    restart: always
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+      - redis
+    ports:
+      - "8000:8000"
+
+
 volumes:
   db:
     driver: local
