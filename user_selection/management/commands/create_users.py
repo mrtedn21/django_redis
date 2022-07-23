@@ -14,7 +14,7 @@ class Command(BaseCommand):
             offer=True,
             role_choice=User.ADMIN,
         )
-        user.avatar.save('test.jpg', open('/app/default_images/admin.jpg', 'rb'))
+        user.avatar.save('test1.jpg', open('/app/default_images/admin.jpg', 'rb'))
         user.save()
 
         user = User.objects.create_user(
@@ -24,7 +24,7 @@ class Command(BaseCommand):
             offer=True,
             role_choice=User.USERNAME_FIELD,
         )
-        user.avatar.save('test.jpg', open('/app/default_images/user.png', 'rb'))
+        user.avatar.save('test2.jpg', open('/app/default_images/user.png', 'rb'))
         user.save()
 
         user = User.objects.create_user(
@@ -34,6 +34,6 @@ class Command(BaseCommand):
             offer=True,
             role_choice=User.MANAGER,
         )
-        user.avatar.save('test.jpg', open('/app/default_images/manager.jpg', 'rb'))
+        user.avatar.save('test3.jpg', open('/app/default_images/manager.jpg', 'rb'))
         user.save()
 
