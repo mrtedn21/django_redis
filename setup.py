@@ -10,6 +10,7 @@ setup(
         'django',
         'djangorestframework',
         'psycopg2-binary',
+        'Pillow',
     ],
 )
 

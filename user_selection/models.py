@@ -1,8 +1,8 @@
 from django.db import models
-from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import AbstractUser
 
 
-class User(AbstractBaseUser):
+class User(AbstractUser):
     USUAL_USER = 'usual_user'
     MANAGER = 'manager'
     ADMIN = 'admin'
@@ -14,7 +14,7 @@ class User(AbstractBaseUser):
     ]
 
     role_choice = models.CharField(
-        max_length=16, choices=ROLES_CHOICES, default=USUAL_USER
+        max_length=16, choices=ROLES_CHOICES, default=USUAL_USER, null=True
     )
-    offer = models.BooleanField()
-    avatar = models.ImageField()
+    offer = models.BooleanField(null=True)
+    avatar = models.ImageField(null=True)
